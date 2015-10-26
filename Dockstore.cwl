@@ -12,7 +12,7 @@ dct:creator:
 
 requirements:
   - class: DockerRequirement
-    dockerPull: "quay.io/briandoconnor/dockstore-tool-bamstats:1.25"
+    dockerPull: "quay.io/briandoconnor/dockstore-tool-bamstats:1.25-1"
   - { import: node-engine.cwl }
 
 hints:
