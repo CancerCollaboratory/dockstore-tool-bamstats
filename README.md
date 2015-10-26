@@ -19,5 +19,8 @@ docker run -it -v `pwd`/NA12878.chrom20.ILLUMINA.bwa.CEU.low_coverage.20121211.b
 
 # within the docker container
 java -Xmx7g -jar /opt/BAMStats-1.25/BAMStats-1.25.jar -i /NA12878.chrom20.ILLUMINA.bwa.CEU.low_coverage.20121211.bam -o test.html -v html
-
 ```
+
+## Running Through the Dockstore Descriptor Launcher
+
+This tool can be found at the [Dockstore Descriptor](https://github.com/CancerCollaboratory/dockstore-descriptor) git repo.
