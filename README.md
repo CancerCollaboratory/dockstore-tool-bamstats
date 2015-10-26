@@ -14,11 +14,11 @@ manually you would execute:
 ## Running Manually
 
 ```
-wget ftp://ftp.1000genomes.ebi.ac.uk/vol1/ftp/phase3/data/NA12878/alignment/NA12878.chrom20.ILLUMINA.bwa.CEU.low_coverage.20121211.bam
-docker run -it -v `pwd`/NA12878.chrom20.ILLUMINA.bwa.CEU.low_coverage.20121211.bam:/NA12878.chrom20.ILLUMINA.bwa.CEU.low_coverage.20121211.bam briandoconnor/dockstore-tool-bamstats:1.25
+$ wget ftp://ftp.1000genomes.ebi.ac.uk/vol1/ftp/phase3/data/NA12878/alignment/NA12878.chrom20.ILLUMINA.bwa.CEU.low_coverage.20121211.bam
+$ docker run -it -v `pwd`/NA12878.chrom20.ILLUMINA.bwa.CEU.low_coverage.20121211.bam:/NA12878.chrom20.ILLUMINA.bwa.CEU.low_coverage.20121211.bam briandoconnor/dockstore-tool-bamstats:1.25
 
 # within the docker container
-java -Xmx7g -jar /opt/BAMStats-1.25/BAMStats-1.25.jar -i /NA12878.chrom20.ILLUMINA.bwa.CEU.low_coverage.20121211.bam -o test.html -v html
+$ java -Xmx7g -jar /opt/BAMStats-1.25/BAMStats-1.25.jar -i /NA12878.chrom20.ILLUMINA.bwa.CEU.low_coverage.20121211.bam -o test.html -v html
 ```
 
 ## Running Through the Dockstore Descriptor Launcher
@@ -56,5 +56,5 @@ This is the parameterization of the BAM stat tool:
 Run it using Java, make sure you have the dependencies installed for the Launcher, see the link above:
 
 ```
-java -cp uber-io.github.collaboratory.launcher-1.0.2-SNAPSHOT.jar io.github.collaboratory.LauncherCWL --config launcher.ini --descriptor Dockstore.cwl --job
+$ java -cp uber-io.github.collaboratory.launcher-1.0.2-SNAPSHOT.jar io.github.collaboratory.LauncherCWL --config launcher.ini --descriptor Dockstore.cwl --job sample_configs.json
 ```

@@ -26,6 +26,8 @@ inputs:
   - id: "#bam_input"
     type: File
     description: "The BAM file used as input, it must be sorted."
+    inputBinding:
+      position: 1
 
 outputs:
   - id: "#bamstats_report"
@@ -35,4 +37,3 @@ outputs:
     description: "A zip file that contains the HTML report and various graphics."
 
 baseCommand: ["bash", "/usr/local/bin/bamstats"]
-bamstats_report.html 
