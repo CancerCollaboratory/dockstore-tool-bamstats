@@ -34,11 +34,5 @@ outputs:
       glob: bamstats_report.zip
     description: "A zip file that contains the HTML report and various graphics."
 
-baseCommand: ["bash", "-c"]
-arguments:
-  - valueFrom:
-      engine: node-engine.cwl
-      script: |
-        "cat " + $job.hello_input.path + " > hello-output.txt &&"
-            + " ls " + $job.ref_file_1.path + " >> hello-output.txt && "
-            + " head -20 " + $job.ref_file_2.path + " >> hello-output.txt"
+baseCommand: ["bash", "/usr/local/bin/bamstats"]
+bamstats_report.html 
