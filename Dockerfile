@@ -17,4 +17,6 @@ RUN wget -q http://downloads.sourceforge.net/project/bamstats/BAMStats-1.25.zip
 RUN unzip BAMStats-1.25.zip && \
     rm BAMStats-1.25.zip && \
     mv BAMStats-1.25 /opt/
+COPY bin/bamstats /usr/local/bin/
+RUN chmod a+x /usr/local/bin/bamstats
 CMD ["/bin/bash"]
