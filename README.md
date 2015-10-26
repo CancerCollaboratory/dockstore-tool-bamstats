@@ -1,6 +1,6 @@
 # dockstore-tool-bamstats
 
-A repo for the `Dockerfile` to create a Docker image for the BAMStats command. Also contains the 
+A repo for the `Dockerfile` to create a Docker image for the BAMStats command. Also contains the
 `Dockstore.yml` which is used by the [Dockstore](http://www.dockstore.org) to register
 this container and describe how to call BAMStats for the community.
 
@@ -16,4 +16,8 @@ manually you would execute:
 ```
 wget ftp://ftp.1000genomes.ebi.ac.uk/vol1/ftp/phase3/data/NA12878/alignment/NA12878.chrom20.ILLUMINA.bwa.CEU.low_coverage.20121211.bam
 docker run -it -v `pwd`/NA12878.chrom20.ILLUMINA.bwa.CEU.low_coverage.20121211.bam:/NA12878.chrom20.ILLUMINA.bwa.CEU.low_coverage.20121211.bam briandoconnor/dockstore-tool-bamstats:1.25
+
+# within the docker container
+java -Xmx7g -jar /opt/BAMStats-1.25/BAMStats-1.25.jar -i /NA12878.chrom20.ILLUMINA.bwa.CEU.low_coverage.20121211.bam -o test.html -v html
+
 ```

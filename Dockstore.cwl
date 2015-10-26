@@ -17,30 +17,22 @@ requirements:
 
 hints:
   - class: ResourceRequirement
-    coresMin: 8
+    coresMin: 1
     ramMin: 4092
     outdirMin: 512000
-    description: "these parameters are used to locate a VM with appropriate resources"
+    description: "the process requires at least 4G of RAM"
 
 inputs:
-  - id: "#ref_file_1"
+  - id: "#bam_input"
     type: File
-    description: "this describes a large reference file that does not change between runs"
-
-  - id: "#ref_file_2"
-    type: File
-    description: "this describes a large reference file that does not change between runs"
-
-  - id: "#hello_input"
-    type: File
-    description: "this describes an input file that should be provided before execution"
+    description: "The BAM file used as input, it must be sorted."
 
 outputs:
-  - id: "#hello_output"
+  - id: "#bamstats_report"
     type: File
     outputBinding:
-      glob: hello-output.txt
-    description: "this describes an output file that should be saved after execution"
+      glob: bamstats_report.zip
+    description: "A zip file that contains the HTML report and various graphics."
 
 baseCommand: ["bash", "-c"]
 arguments:
