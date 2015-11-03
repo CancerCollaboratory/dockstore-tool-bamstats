@@ -23,19 +23,19 @@ hints:
     description: "the process requires at least 4G of RAM"
 
 inputs:
-  - id: "#bam_input"
-    type: File
-    description: "The BAM file used as input, it must be sorted."
-    inputBinding:
-      position: 1
-
-inputs:
   - id: "#mem_gb"
-    type: File
+    type: int
+    default: 4
     description: "The memory, in GB, for the reporting tool"
     inputBinding:
       position: 1
 
+inputs:
+  - id: "#bam_input"
+    type: File
+    description: "The BAM file used as input, it must be sorted."
+    inputBinding:
+      position: 2
 
 outputs:
   - id: "#bamstats_report"

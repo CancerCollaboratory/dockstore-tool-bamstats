@@ -1,5 +1,5 @@
 #!/bin/bash
 set -euf -o pipefail
 
-java -Xmx$2g -jar /opt/BAMStats-1.25/BAMStats-1.25.jar -i $1 -o bamstats_report.html -v html
+java -Xmx$1g -jar /opt/BAMStats-1.25/BAMStats-1.25.jar -i $2 -o bamstats_report.html -v html
 zip -r bamstats_report.zip bamstats_report.html bamstats_report.html.data
