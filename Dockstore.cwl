@@ -29,6 +29,14 @@ inputs:
     inputBinding:
       position: 1
 
+inputs:
+  - id: "#mem_gb"
+    type: File
+    description: "The memory, in GB, for the reporting tool"
+    inputBinding:
+      position: 1
+
+
 outputs:
   - id: "#bamstats_report"
     type: File
