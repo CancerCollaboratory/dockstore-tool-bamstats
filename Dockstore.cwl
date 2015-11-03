@@ -30,7 +30,6 @@ inputs:
     inputBinding:
       position: 1
 
-inputs:
   - id: "#bam_input"
     type: File
     description: "The BAM file used as input, it must be sorted."
