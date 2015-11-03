@@ -12,7 +12,7 @@ dct:creator:
 
 requirements:
   - class: DockerRequirement
-    dockerPull: "quay.io/briandoconnor/dockstore-tool-bamstats:1.25"
+    dockerPull: "quay.io/briandoconnor/dockstore-tool-bamstats:1.25-1"
   - { import: node-engine.cwl }
 
 hints:
@@ -23,11 +23,19 @@ hints:
     description: "the process requires at least 4G of RAM"
 
 inputs:
+  - id: "#mem_gb"
+    type: int
+    default: 4
+    description: "The memory, in GB, for the reporting tool"
+    inputBinding:
+      position: 1
+
+inputs:
   - id: "#bam_input"
     type: File
     description: "The BAM file used as input, it must be sorted."
     inputBinding:
-      position: 1
+      position: 2
 
 outputs:
   - id: "#bamstats_report"
