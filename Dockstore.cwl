@@ -5,6 +5,8 @@ description: "A Docker container for the BAMStats command. See the [BAMStats](ht
 id: "BAMStats"
 label: "BAMStats tool"
 
+cwlVersion: cwl:draft-3
+
 dct:creator:
   "@id": "http://orcid.org/0000-0002-7681-6415"
   foaf:name: Brian O'Connor
