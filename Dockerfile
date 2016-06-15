@@ -6,7 +6,7 @@
 FROM ubuntu:14.04
 
 # File Author / Maintainer
-MAINTAINER Brian O'Connor <briandoconnor@gmail.com>
+MAINTAINER Brian OConnor <briandoconnor@gmail.com>
 
 # Setup packages
 USER root
