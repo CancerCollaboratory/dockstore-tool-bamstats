@@ -2,7 +2,7 @@
 # Dockerfile to build a sample tool container for BAMStats
 #############################################################
 
-# Set the base image to SeqWare
+# Set the base image to Ubuntu
 FROM ubuntu:14.04
 
 # File Author / Maintainer

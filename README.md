@@ -9,7 +9,7 @@ this container and describe how to call BAMStats for the community.
 Normally you would let [Quay.io](http://quay.io) build this.  But, if you need to build
 manually you would execute:
 
-    docker build -t briandoconnor/dockstore-tool-bamstats:1.25 .
+    docker build -t briandoconnor/dockstore-tool-bamstats:1.25-3 .
 
 ## Running Manually
 
