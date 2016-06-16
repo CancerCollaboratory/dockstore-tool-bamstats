@@ -15,28 +15,22 @@ manually you would execute:
 
 ```
 $ wget ftp://ftp.1000genomes.ebi.ac.uk/vol1/ftp/phase3/data/NA12878/alignment/NA12878.chrom20.ILLUMINA.bwa.CEU.low_coverage.20121211.bam
-$ docker run -it -v `pwd`/NA12878.chrom20.ILLUMINA.bwa.CEU.low_coverage.20121211.bam:/NA12878.chrom20.ILLUMINA.bwa.CEU.low_coverage.20121211.bam briandoconnor/dockstore-tool-bamstats:1.25
+$ docker run -it -v `pwd`/NA12878.chrom20.ILLUMINA.bwa.CEU.low_coverage.20121211.bam:/NA12878.chrom20.ILLUMINA.bwa.CEU.low_coverage.20121211.bam briandoconnor/dockstore-tool-bamstats:1.25-3
 
 # within the docker container
-$ java -Xmx7g -jar /opt/BAMStats-1.25/BAMStats-1.25.jar -i /NA12878.chrom20.ILLUMINA.bwa.CEU.low_coverage.20121211.bam -o test.html -v html
+$ /usr/local/bin/bamstats 4 /NA12878.chrom20.ILLUMINA.bwa.CEU.low_coverage.20121211.bam
 ```
+You'll then see a file, `bamstats_report.zip`, in the current directory, that's the report file. You can use `-v` to mount the result out of the container.
 
-## Running Through the Dockstore Descriptor Launcher
+## Running Through the Dockstore CLI
 
-This tool can be found at the [Dockstore Descriptor](https://github.com/CancerCollaboratory/dockstore-descriptor) git repo.  It lets you run a Docker container with a CWL descriptor locally, using Docker and the CWL command
+This tool can be found at the [Dockstore](https://dockstore.org), login with your GitHub account and follow the 
+directions to setup the CLI.  It lets you run a Docker container with a CWL descriptor locally, using Docker and the CWL command
 line utility.  This is great for testing.
-
-### Create Config File
-
-Call it `launcher.ini`:
-
-```
-working-directory=./datastore/
-```
 
 ### Make a Parameters JSON
 
-This is the parameterization of the BAM stat tool:
+This is the parameterization of the BAM stat tool, a copy is present in this repo called `sample_configs.json`:
 
 ```
 {
@@ -46,15 +40,22 @@ This is the parameterization of the BAM stat tool:
     },
     "bamstats_report": {
         "class": "File",
-        "path": "s3://oicr.temp/testing-launcher/bamstats_report.zip"
+        "path": "/tmp/bamstats_report.zip"
     }
 }
 ```
 
-### Run with Launcher
+### Run with the CLI
 
-Run it using Java, make sure you have the dependencies installed for the Launcher, see the link above:
+Run it using the `dockstore` CLI:
 
 ```
-$ java -cp uber-io.github.collaboratory.launcher-1.0.2-SNAPSHOT.jar io.github.collaboratory.LauncherCWL --config launcher.ini --descriptor Dockstore.cwl --job sample_configs.json
+Usage:
+# fetch CWL
+$> dockstore cwl --entry quay.io/briandoconnor/dockstore-tool-bamstats:1.25-3 > Dockstore.cwl
+# make a runtime JSON template and edit it (or use the content of sample_configs.json above)
+$> dockstore convert cwl2json --cwl Dockstore.cwl > Dockstore.json
+# run it locally with the Dockstore CLI
+$> dockstore launch --entry quay.io/briandoconnor/dockstore-tool-bamstats:1.25-3 \
+    --json Dockstore.json
 ```

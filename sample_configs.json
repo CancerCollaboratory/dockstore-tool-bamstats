@@ -5,6 +5,6 @@
     },
     "bamstats_report": {
         "class": "File",
-        "path": "s3://oicr.temp/testing-launcher/bamstats_report.zip"
+        "path": "/tmp/bamstats_report.zip"
     }
 }

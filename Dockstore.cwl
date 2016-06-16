@@ -1,9 +1,20 @@
 #!/usr/bin/env cwl-runner
 
 class: CommandLineTool
-description: "A Docker container for the BAMStats command. See the [BAMStats](http://bamstats.sourceforge.net/) website for more information."
 id: "BAMStats"
 label: "BAMStats tool"
+description: |
+    A Docker container for the BAMStats command. See the [BAMStats](http://bamstats.sourceforge.net/) website for more information.
+    ```
+    Usage:
+    # fetch CWL
+    $> dockstore cwl --entry quay.io/briandoconnor/dockstore-tool-bamstats:1.25-3 > Dockstore.cwl
+    # make a runtime JSON template and edit it (or use the content of sample_configs.json in this git repo)
+    $> dockstore convert cwl2json --cwl Dockstore.cwl > Dockstore.json
+    # run it locally with the Dockstore CLI
+    $> dockstore launch --entry quay.io/briandoconnor/dockstore-tool-bamstats:1.25-3 \
+        --json Dockstore.json
+    ```
 
 dct:creator:
   "@id": "http://orcid.org/0000-0002-7681-6415"
