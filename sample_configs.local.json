@@ -1,0 +1,10 @@
+{
+  "bam_input": {
+        "class": "File",
+        "path": "/tmp/NA12878.chrom20.ILLUMINA.bwa.CEU.low_coverage.20121211.bam"
+    },
+    "bamstats_report": {
+        "class": "File",
+        "path": "/tmp/bamstats_report.zip"
+    }
+}
