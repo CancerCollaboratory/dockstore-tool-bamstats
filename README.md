@@ -1,3 +1,5 @@
+[![Docker Repository on Quay.io](https://quay.io/repository/collaboratory/dockstore-tool-bamstats/status "Docker Repository on Quay.io")](https://quay.io/repository/collaboratory/dockstore-tool-bamstats)
+
 # dockstore-tool-bamstats
 
 A repo for the `Dockerfile` to create a Docker image for the BAMStats command. Also contains the
@@ -25,8 +27,7 @@ You'll then see a file, `bamstats_report.zip`, in the current directory, that's 
 ## Running Through the Dockstore CLI
 
 This tool can be found at the [Dockstore](https://dockstore.org), login with your GitHub account and follow the 
-directions to setup the CLI.  It lets you run a Docker container with a CWL descriptor locally, using Docker and the CWL command
-line utility.  This is great for testing.
+directions to setup the CLI.  It lets you run a Docker container with a CWL descriptor locally, using Docker and the CWL command line utility.  This is great for testing.
 
 ### Make a Parameters JSON
 
