@@ -1,3 +1,5 @@
+[![Docker Repository on Quay.io](https://quay.io/repository/briandoconnor/dockstore-tool-bamstats/status "Docker Repository on Quay.io")](https://quay.io/repository/briandoconnor/dockstore-tool-bamstats)
+
 # dockstore-tool-bamstats
 
 A repo for the `Dockerfile` to create a Docker image for the BAMStats command. Also contains the
