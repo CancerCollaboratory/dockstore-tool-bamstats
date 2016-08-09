@@ -1,0 +1,10 @@
+{
+  "bam_input": {
+        "class": "File",
+        "path": "rna.SRR948778.bam"
+    },
+    "bamstats_report": {
+        "class": "File",
+        "path": "/tmp/bamstats_report.zip"
+    }
+}
