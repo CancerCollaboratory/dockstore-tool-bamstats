@@ -14,7 +14,7 @@ description: |
     # make a runtime JSON template and edit it (or use the content of sample_configs.json in this git repo)
     $> dockstore tool convert cwl2json --cwl Dockstore.cwl > Dockstore.json
     # run it locally with the Dockstore CLI
-    $> dockstore tool launch --entry quay.io/collaboratory/dockstore-tool-bamstats:1.25-5 \
+    $> dockstore tool launch --entry quay.io/collaboratory/dockstore-tool-bamstats:1.25-5_1.0 \
         --json Dockstore.json
     ```
 
