@@ -7,16 +7,6 @@ cwlVersion: v1.0
 description: |
     ![build_status](https://quay.io/repository/collaboratory/dockstore-tool-bamstats/status)
     A Docker container for the BAMStats command. See the [BAMStats](http://bamstats.sourceforge.net/) website for more information.
-    ```
-    Usage:
-    # fetch CWL
-    $> dockstore tool cwl --entry quay.io/collaboratory/dockstore-tool-bamstats:1.25-5 > Dockstore.cwl
-    # make a runtime JSON template and edit it (or use the content of sample_configs.json in this git repo)
-    $> dockstore tool convert cwl2json --cwl Dockstore.cwl > Dockstore.json
-    # run it locally with the Dockstore CLI
-    $> dockstore tool launch --entry quay.io/collaboratory/dockstore-tool-bamstats:1.25-5_1.0 \
-        --json Dockstore.json
-    ```
 
 dct:creator:
   "@id": "http://orcid.org/0000-0002-7681-6415"
