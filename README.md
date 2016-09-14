@@ -1,10 +1,26 @@
 [![Docker Repository on Quay.io](https://quay.io/repository/collaboratory/dockstore-tool-bamstats/status "Docker Repository on Quay.io")](https://quay.io/repository/collaboratory/dockstore-tool-bamstats)
+[![Build Status](https://travis-ci.org/CancerCollaboratory/dockstore-tool-bamstats.svg)](https://travis-ci.org/CancerCollaboratory/dockstore-tool-bamstats)
 
 # dockstore-tool-bamstats
 
 A repo for the `Dockerfile` to create a Docker image for the BAMStats command. Also contains the
 `Dockstore.yml` which is used by the [Dockstore](https://www.dockstore.org) to register
 this container and describe how to call BAMStats for the community.
+
+## Validation 
+
+This tool has been validated as a CWL draft-3 and v1.0 CommandLineTool. 
+
+Versions that we tested with are the following 
+```
+avro (1.8.1)
+cwl-runner (1.0)
+cwl-upgrader (0.1.1)
+cwltool (1.0.20160712154127)
+schema-salad (1.14.20160708181155)
+setuptools (25.1.6)
+```
+
 
 ## Building Manually
 
@@ -59,3 +75,5 @@ $> dockstore tool convert cwl2json --cwl Dockstore.cwl > Dockstore.json
 # run it locally with the Dockstore CLI
 $> dockstore tool launch --entry quay.io/collaboratory/dockstore-tool-bamstats:1.25-3 --json Dockstore.json
 ```
+
+
