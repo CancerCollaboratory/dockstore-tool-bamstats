@@ -69,12 +69,11 @@ Run it using the `dockstore` CLI:
 ```
 Usage:
 # fetch CWL
-$> dockstore cwl --entry quay.io/collaboratory/dockstore-tool-bamstats:1.25-3 > Dockstore.cwl
+$> dockstore tool cwl --entry quay.io/collaboratory/dockstore-tool-bamstats:1.25-3 > Dockstore.cwl
 # make a runtime JSON template and edit it (or use the content of sample_configs.json above)
-$> dockstore convert cwl2json --cwl Dockstore.cwl > Dockstore.json
+$> dockstore tool convert cwl2json --cwl Dockstore.cwl > Dockstore.json
 # run it locally with the Dockstore CLI
-$> dockstore launch --entry quay.io/collaboratory/dockstore-tool-bamstats:1.25-3 \
-    --json Dockstore.json
+$> dockstore tool launch --entry quay.io/collaboratory/dockstore-tool-bamstats:1.25-3 --json Dockstore.json
 ```
 
 
