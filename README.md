@@ -20,7 +20,7 @@ cwltool (1.0.20160712154127)
 schema-salad (1.14.20160708181155)
 setuptools (25.1.6)
 ```
-
+Tested on Dockstore version 1.0-rc.2
 
 ## Building Manually
 
