@@ -1,10 +1,10 @@
 #!/usr/bin/env cwl-runner
-
+  
 class: CommandLineTool
 id: "BAMStats"
 label: "BAMStats tool"
 cwlVersion: v1.0 
-description: |
+doc: |
     ![build_status](https://quay.io/repository/collaboratory/dockstore-tool-bamstats/status)
     A Docker container for the BAMStats command. See the [BAMStats](http://bamstats.sourceforge.net/) website for more information.
 
@@ -48,3 +48,7 @@ outputs:
     doc: "A zip file that contains the HTML report and various graphics."
 
 baseCommand: ["bash", "/usr/local/bin/bamstats"]
+
+$namespaces:
+  dct: http://purl.org/dc/terms/
+  foaf: http://xmlns.com/foaf/0.1/
