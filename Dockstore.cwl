@@ -1,10 +1,10 @@
 #!/usr/bin/env cwl-runner
-
+  
 class: CommandLineTool
 id: "BAMStats"
 label: "BAMStats tool"
 cwlVersion: v1.0 
-description: |
+doc: |
     ![build_status](https://quay.io/repository/collaboratory/dockstore-tool-bamstats/status)
     A Docker container for the BAMStats command. See the [BAMStats](http://bamstats.sourceforge.net/) website for more information.
 
@@ -18,11 +18,10 @@ requirements:
     dockerPull: "quay.io/collaboratory/dockstore-tool-bamstats:1.25-6_1.0"
 
 hints:
-  - class: ResourceRequirement
+  - class: ResourceRequirement 
     coresMin: 1
-    ramMin: 4092
+    ramMin: 4092  # "the process requires at least 4G of RAM"
     outdirMin: 512000
-    doc: "the process requires at least 4G of RAM"
 
 inputs:
   mem_gb:
@@ -48,3 +47,7 @@ outputs:
     doc: "A zip file that contains the HTML report and various graphics."
 
 baseCommand: ["bash", "/usr/local/bin/bamstats"]
+
+$namespaces:
+  dct: http://purl.org/dc/terms/
+  foaf: http://xmlns.com/foaf/0.1/
