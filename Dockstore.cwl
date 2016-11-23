@@ -8,6 +8,8 @@ doc: |
     ![build_status](https://quay.io/repository/collaboratory/dockstore-tool-bamstats/status)
     A Docker container for the BAMStats command. See the [BAMStats](http://bamstats.sourceforge.net/) website for more information.
 
+cwlVersion: cwl:draft-3
+
 dct:creator:
   "@id": "http://orcid.org/0000-0002-7681-6415"
   foaf:name: Brian O'Connor
