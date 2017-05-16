@@ -6,7 +6,7 @@ label: "BAMStats tool"
 cwlVersion: v1.0 
 doc: |
     This demonstrates an alternate descriptor to Dockstore.cwl
-    A Docker container for the BAMStats command. See the [BAMStats](http://bamstats.sourceforge.net/) website for more information.
+    A Docker container for the sort command using a container shared with bamstats.
 
 dct:creator:
   "@id": "http://orcid.org/0000-0002-7681-6415"
@@ -17,37 +17,36 @@ requirements:
   - class: DockerRequirement
     dockerPull: "quay.io/collaboratory/dockstore-tool-bamstats:1.25-6_1.0"
 
-hints:
-  - class: ResourceRequirement 
-    coresMin: 1
-    ramMin: 4092  # "the process requires at least 4G of RAM"
-    outdirMin: 512000
-
 inputs:
-  mem_gb:
-    type: int
-    default: 4
-    doc: "The memory, in GB, for the reporting tool"
+  input:
+    type:
+      type: array
+      items: File
+    inputBinding:
+      position: 4
+  
+  output:
+    type: string
+
+  key:
+    type: 
+      type: array
+      items: string 
+      inputBinding:
+        prefix: "-k"
     inputBinding:
       position: 1
+    description: |
+      -k, --key=POS1[,POS2]
+      start a key at POS1, end it at POS2 (origin 1)
 
-  bam_input:
-    type: File
-    doc: "The BAM file used as input, it must be sorted."
-    format: "http://edamontology.org/format_2572" 
-    inputBinding:
-      position: 2
+stdout: $(inputs.output)
 
 outputs:
-  bamstats_report:
+  sorted:
     type: File
-    format: "http://edamontology.org/format_3615"
-    outputBinding:
-      glob: bamstats_report.zip
-    doc: "A zip file that contains the HTML report and various graphics."
+    description: "The sorted file"
+    outputBinding: 
+      glob: $(inputs.output)
 
-baseCommand: ["bash", "/usr/local/bin/bamstats"]
-
-$namespaces:
-  dct: http://purl.org/dc/terms/
-  foaf: http://xmlns.com/foaf/0.1/
+baseCommand: ["sort"]
