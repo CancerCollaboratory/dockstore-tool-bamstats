@@ -1,8 +1,8 @@
 #!/usr/bin/env cwl-runner
   
 class: CommandLineTool
-id: "BAMStats"
-label: "BAMStats tool"
+id: "BAMStats - Sort demo"
+label: "BAMStats tool - Sort demo"
 cwlVersion: v1.0 
 doc: |
     This demonstrates an alternate descriptor to Dockstore.cwl
