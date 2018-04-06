@@ -75,5 +75,3 @@ $> dockstore tool convert cwl2json --cwl Dockstore.cwl > Dockstore.json
 # run it locally with the Dockstore CLI
 $> dockstore tool launch --entry quay.io/collaboratory/dockstore-tool-bamstats:1.25-3 --json Dockstore.json
 ```
-
-
