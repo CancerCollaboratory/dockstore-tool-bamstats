@@ -111,3 +111,4 @@ Install [Nextflow](https://www.nextflow.io/). Nextflow workflows cannot be run w
 The workflow can be run using the following command:
 ```
 $> nextflow run main.nf
+```
