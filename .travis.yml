@@ -19,10 +19,10 @@ jdk:
   - oraclejdk8
 
 before_install:
-  - before-install.sh
+  - bash before-install.sh
 
 install: 
-  - install.sh
+  - bash install.sh
 
 script: 
-  - script.sh
+  - bash script.sh
