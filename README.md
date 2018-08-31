@@ -43,9 +43,11 @@ You'll then see a file, `bamstats_report.zip`, in the current directory, that's 
 ## Running Through the Dockstore CLI
 
 This tool can be found at the [Dockstore](https://dockstore.org), login with your GitHub account and follow the 
-directions to setup the CLI.  It lets you run a Docker container with a CWL descriptor locally, using Docker and the CWL command line utility.  This is great for testing.
+directions to setup the CLI.  It lets you run a Docker container with a CWL/WDL descriptor locally, using Docker and the CWL/WDL command line utility.  This is great for testing.
 
-### Make a Parameters JSON
+### With CWL
+
+#### Make a Parameters JSON
 
 This is the parameterization of the BAM stat tool, a copy is present in this repo called `sample_configs.json`:
 
@@ -62,7 +64,7 @@ This is the parameterization of the BAM stat tool, a copy is present in this rep
 }
 ```
 
-### Run with the CLI
+#### Run with the CLI
 
 Run it using the `dockstore` CLI:
 
@@ -76,4 +78,37 @@ $> dockstore tool convert cwl2json --cwl Dockstore.cwl > Dockstore.json
 $> dockstore tool launch --entry quay.io/collaboratory/dockstore-tool-bamstats:1.25-3 --json Dockstore.json
 ```
 
+### With WDL
+#### Make a Parameters JSON
 
+This is the parameterization of the BAM stat tool, a copy is present in this repo called `test.wdl.json`:
+
+```
+{
+  "bamstatsWorkflow.bam_input": "rna.SRR948778.bam",
+  "bamstatsWorkflow.mem_gb": "4"
+}
+```
+
+#### Run with the CLI
+
+Run it using the `dockstore` CLI:
+
+```
+Usage:
+# fetch WDL
+$> dockstore tool wdl --entry quay.io/collaboratory/dockstore-tool-bamstats > Dockstore.wdl
+# make a runtime JSON template and edit it (or use the content of test.wdl.json above)
+$> dockstore tool convert wdl2json --wdl Dockstore.wdl > Dockstore.json
+# run it locally with the Dockstore CLI
+$> dockstore tool launch --entry quay.io/collaboratory/dockstore-tool-bamstats --json Dockstore.json
+```
+
+## Running Nextflow Workflow
+
+Install [Nextflow](https://www.nextflow.io/). Nextflow workflows cannot be run with the Dockstore CLI yet.
+
+The workflow can be run using the following command:
+```
+$> nextflow run main.nf
+```

@@ -3,6 +3,11 @@ sudo: required
 services:
   - docker
 
+env:
+  - LANGUAGE=cwl
+  - LANGUAGE=wdl
+  - LANGUAGE=nfl
+
 notifications:
   slack: 
     on_success: never
@@ -16,10 +21,10 @@ jdk:
 
 before_install:
   - docker build -t quay.io/collaboratory/dockstore-tool-bamstats .
-  - pip2.7 install --user setuptools==24.0.3
+  - bash before-install.sh
 
 install: 
-  - pip2.7 install --user cwl-runner cwltool==1.0.20160712154127 schema-salad==1.14.20160708181155 avro==1.8.1
+  - bash install.sh
 
 script: 
-  - cwltool --non-strict Dockstore.cwl test.json 
+  - bash script.sh
