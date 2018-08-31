@@ -20,6 +20,9 @@ before_install:
 
 install: 
   - pip2.7 install --user cwl-runner cwltool==1.0.20160712154127 schema-salad==1.14.20160708181155 avro==1.8.1
+  - curl -s https://get.nextflow.io | bash
+  - mv nextflow $HOME/bin
 
 script: 
-  - cwltool --non-strict Dockstore.cwl test.json 
+  - cwltool --non-strict Dockstore.cwl test.json
+  - nextflow run main.nf
