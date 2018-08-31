@@ -4,8 +4,8 @@ services:
   - docker
 
 env:
-  LANGUAGE=cwl
-  LANGUAGE=wdl
+  - LANGUAGE=cwl
+  - LANGUAGE=wdl
 
 notifications:
   slack: 
