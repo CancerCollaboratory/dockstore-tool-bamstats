@@ -103,3 +103,12 @@ $> dockstore tool convert wdl2json --wdl Dockstore.wdl > Dockstore.json
 # run it locally with the Dockstore CLI
 $> dockstore tool launch --entry quay.io/collaboratory/dockstore-tool-bamstats --json Dockstore.json
 ```
+
+## Running Nextflow Workflow
+
+Install [Nextflow](https://www.nextflow.io/). Nextflow workflows cannot be run with the Dockstore CLI yet.
+
+The workflow can be run using the following command:
+```
+$> nextflow run main.nf
+```

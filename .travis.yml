@@ -6,6 +6,7 @@ services:
 env:
   - LANGUAGE=cwl
   - LANGUAGE=wdl
+  - LANGUAGE=nfl
 
 notifications:
   slack: 
