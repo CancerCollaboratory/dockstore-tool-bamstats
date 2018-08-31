@@ -20,6 +20,9 @@ before_install:
 
 install: 
   - pip2.7 install --user cwl-runner cwltool==1.0.20160712154127 schema-salad==1.14.20160708181155 avro==1.8.1
+  - wget https://github.com/broadinstitute/cromwell/releases/download/32/cromwell-32.jar
+  - mv cromwell-32.jar $HOME/bin
 
 script: 
   - cwltool --non-strict Dockstore.cwl test.json 
+  - java -jar cromwell-32.jar run Dockstore.wdl --inputs test.wdl.json
