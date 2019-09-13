@@ -11,7 +11,7 @@ if [[ "${LANGUAGE}" == "cwl" ]]; then
     mv NA12878.chrom20.ILLUMINA.bwa.CEU.low_coverage.20121211.bam /tmp/
     cwltool --non-strict Dockstore.cwl sample_configs.local.json
 elif [[ "${LANGUAGE}" == "wdl" ]]; then
-    java -jar cromwell-32.jar run Dockstore.wdl --inputs test.wdl.json
+    java -jar cromwell-44.jar run Dockstore.wdl --inputs test.wdl.json
 elif [[ "${LANGUAGE}" == "nfl" ]]; then
     nextflow run main.nf
 fi

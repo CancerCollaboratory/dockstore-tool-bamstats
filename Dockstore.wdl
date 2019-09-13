@@ -1,6 +1,10 @@
+version 1.0
 task bamstats {
-	File bam_input
-	Int mem_gb
+    input {
+        File bam_input
+        Int mem_gb
+    }
+
 
 	command {
 		bash /usr/local/bin/bamstats ${mem_gb} ${bam_input}
@@ -11,7 +15,7 @@ task bamstats {
 	}
 
 	runtime {
-		docker: "quay.io/collaboratory/dockstore-tool-bamstats:1.25-6_1.0" 
+		docker: "quay.io/collaboratory/dockstore-tool-bamstats:1.25-6_1.0"
 		memory: mem_gb + "GB"
 	}
 
@@ -21,7 +25,9 @@ task bamstats {
 }
 
 workflow bamstatsWorkflow {
-	File bam_input
-	Int mem_gb	
+    input {
+        File bam_input
+        Int mem_gb
+    }
 	call bamstats { input: bam_input=bam_input, mem_gb=mem_gb }
 }
