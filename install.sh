@@ -6,7 +6,8 @@ set -o nounset
 set -o xtrace
 
 if [[ "${LANGUAGE}" == "cwl" ]]; then
-    pip2.7 install --user cwl-runner cwltool==1.0.20160712154127 schema-salad==1.14.20160708181155 avro==1.8.1
+    curl -o requirements.txt "https://staging.dockstore.org/api/metadata/runner_dependencies?client_version=1.7.0-rc.2&python_version=3"
+    pip3 install --user -r requirements.txt
 elif [[ "${LANGUAGE}" == "wdl" ]]; then
     wget https://github.com/broadinstitute/cromwell/releases/download/44/cromwell-44.jar
 elif [[ "${LANGUAGE}" == "nfl" ]]; then
