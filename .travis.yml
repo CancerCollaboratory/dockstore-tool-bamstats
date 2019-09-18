@@ -21,7 +21,7 @@ jdk:
 
 before_install:
   - docker build -t quay.io/collaboratory/dockstore-tool-bamstats .
-  - bash before-install.sh
+  - pyenv global 3.6
 
 install: 
   - bash install.sh
