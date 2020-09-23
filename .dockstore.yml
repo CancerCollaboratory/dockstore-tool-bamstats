@@ -1,6 +1,6 @@
 version: 1.2
 workflows:
-   - subclass: WDL
-     primaryDescriptorPath: /Dockstore.wdl
+   - subclass: CWL
+     primaryDescriptorPath: /Dockstore.cwl
      testParameterFiles:
-         - /test.wdl.json
+         - /test.json
