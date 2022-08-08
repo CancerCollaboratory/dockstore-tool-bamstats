@@ -10,5 +10,5 @@ if [[ "${LANGUAGE}" == "cwl" ]]; then
 elif [[ "${LANGUAGE}" == "wdl" ]]; then
     java -jar cromwell-32.jar run Dockstore.wdl --inputs test.wdl.json
 elif [[ "${LANGUAGE}" == "nfl" ]]; then
-    nextflow run main.nf
+    ./nextflow run main.nf
 fi
