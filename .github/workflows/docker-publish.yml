@@ -12,7 +12,7 @@ on:
     branches: 
       - develop
     tags:
-      - .*
+      - '*'
   pull_request:
     branches: [ "develop" ]
 
