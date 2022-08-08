@@ -11,5 +11,5 @@ elif [[ "${LANGUAGE}" == "wdl" ]]; then
     wget https://github.com/broadinstitute/cromwell/releases/download/32/cromwell-32.jar
 elif [[ "${LANGUAGE}" == "nfl" ]]; then
     curl -s https://get.nextflow.io | bash
-    mv nextflow $HOME/.local/bin
+    mv nextflow $HOME/bin
 fi
