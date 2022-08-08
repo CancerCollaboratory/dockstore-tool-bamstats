@@ -12,4 +12,5 @@ elif [[ "${LANGUAGE}" == "wdl" ]]; then
 elif [[ "${LANGUAGE}" == "nfl" ]]; then
     curl -s https://get.nextflow.io | bash
     mv nextflow $HOME/bin
+    echo "$HOME/bin" >> $GITHUB_PATH
 fi

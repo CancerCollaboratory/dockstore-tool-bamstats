@@ -21,6 +21,13 @@ jobs:
       with:
         push: false
         tags: quay.io/collaboratory/dockstore-tool-bamstats
+
+    - if: matrix.lang == 'cwl'
+      uses: actions/setup-python@v4
+      with:
+        python-version: '2.7'
+
+        
     - name: Setup Python
       run: bash before-install.sh
     - name: Setup engines
