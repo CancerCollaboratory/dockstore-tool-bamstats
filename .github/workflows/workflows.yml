@@ -3,24 +3,23 @@ name: Test workflows
 on: [push]
 
 jobs:
-  build:
-    example_matrix:
+  example_matrix:
     strategy:
       matrix:
         LANGUAGE: [cwl, wdl, nfl]      
 
-      runs-on: ubuntu-20.04
+    runs-on: ubuntu-20.04
 
-      steps:
-      - uses: actions/checkout@v3
-      - name: Build Docker image
-        uses: docker/build-push-action@v3
-        with:
-          push: false
-          tags: quay.io/collaboratory/dockstore-tool-bamstats
-      - name: Setup Python
-        run: bash before-install.sh
-      - name: Setup engines
-        run: bash install.sh
-      - name: Run workflows
-        run: bash script.sh
+    steps:
+    - uses: actions/checkout@v3
+    - name: Build Docker image
+      uses: docker/build-push-action@v3
+      with:
+        push: false
+        tags: quay.io/collaboratory/dockstore-tool-bamstats
+    - name: Setup Python
+      run: bash before-install.sh
+    - name: Setup engines
+      run: bash install.sh
+    - name: Run workflows
+      run: bash script.sh
