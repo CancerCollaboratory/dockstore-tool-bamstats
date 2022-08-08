@@ -1,6 +1,3 @@
-[![Docker Repository on Quay.io](https://quay.io/repository/collaboratory/dockstore-tool-bamstats/status "Docker Repository on Quay.io")](https://quay.io/repository/collaboratory/dockstore-tool-bamstats)
-[![Build Status](https://travis-ci.org/CancerCollaboratory/dockstore-tool-bamstats.svg)](https://travis-ci.org/CancerCollaboratory/dockstore-tool-bamstats)
-
 # dockstore-tool-bamstats
 
 A repo for the `Dockerfile` to create a Docker image for the BAMStats command. Also contains the
@@ -24,10 +21,10 @@ setuptools (25.1.6)
 
 ## Building Manually
 
-Normally you would let [Quay.io](http://quay.io) build this.  But, if you need to build
+Normally you would let GitHub actions build this.  But, if you need to build
 manually you would execute:
 
-    docker build -t collaboratory/dockstore-tool-bamstats:1.25-3 .
+    docker build -t ghcr.io/dockstore/dockstore-tool-bamstats:1.25-8 .
 
 ## Running Manually
 
