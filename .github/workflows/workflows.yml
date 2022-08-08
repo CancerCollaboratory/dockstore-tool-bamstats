@@ -5,8 +5,12 @@ on: [push]
 jobs:
   example_matrix:
     strategy:
+      fail-fast: false
       matrix:
-        LANGUAGE: [cwl, wdl, nfl]      
+        lang: [cwl, wdl, nfl]
+
+    env:
+      LANGUAGE: ${{ matrix.lang }}
 
     runs-on: ubuntu-20.04
 
