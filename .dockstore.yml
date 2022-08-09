@@ -1,0 +1,28 @@
+version: 1.2
+workflows:
+  - subclass: WDL
+    primaryDescriptorPath: /Dockstore.wdl
+    testParameterFiles:
+      - /test.wdl.json
+    name: wdl
+    authors:
+      - orcid: 0000-0002-6130-1021
+  - subclass: CWL
+    primaryDescriptorPath: /Dockstore.cwl
+    testParameterFiles:
+      - /test.json
+    name: cwl
+    authors:
+      - orcid: 0000-0002-6130-1021
+  - subclass: CWL
+    primaryDescriptorPath: /Dockstore2.cwl
+    testParameterFiles:
+      - /test.json
+    name: cwl2
+    authors:
+      - orcid: 0000-0002-6130-1021
+  - subclass: NFL
+    primaryDescriptorPath: /nextflow.config
+    name: nfl
+    authors:
+      - orcid: 0000-0002-6130-1021               
