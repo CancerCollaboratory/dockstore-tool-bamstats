@@ -8,15 +8,7 @@ this container and describe how to call BAMStats for the community.
 
 This tool has been validated as a CWL draft-3 and v1.0 CommandLineTool. 
 
-Versions that we tested with are the following 
-```
-avro (1.8.1)
-cwl-runner (1.0)
-cwl-upgrader (0.1.1)
-cwltool (1.0.20160712154127)
-schema-salad (1.14.20160708181155)
-setuptools (25.1.6)
-```
+Versions that we tested with are documented iin https://raw.githubusercontent.com/dockstore/dockstore/1.13.0-beta.3/dockstore-webservice/src/main/resources/requirements/1.13.0/requirements3.txt
 
 
 ## Building Manually
