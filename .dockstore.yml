@@ -4,14 +4,14 @@ tools:
     primaryDescriptorPath: /Dockstore.cwl
     testParameterFiles:
       - /test.json
-    name: cwl
+    name: cwl01
     authors:
       - orcid: 0000-0002-6130-1021
   - subclass: CWL
     primaryDescriptorPath: /Dockstore2.cwl
     testParameterFiles:
       - /test.json
-    name: cwl2
+    name: cwl02
     authors:
       - orcid: 0000-0002-6130-1021
 workflows:
