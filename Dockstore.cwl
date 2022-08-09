@@ -3,7 +3,7 @@
 class: CommandLineTool
 id: "BAMStats"
 label: "BAMStats tool"
-cwlVersion: v1.0 
+cwlVersion: v1.1
 doc: |
     ![build_status](https://quay.io/repository/collaboratory/dockstore-tool-bamstats/status)
     A Docker container for the BAMStats command. See the [BAMStats](http://bamstats.sourceforge.net/) website for more information.

@@ -13,8 +13,8 @@ Versions that we tested with are the following
 avro (1.8.1)
 cwl-runner (1.0)
 cwl-upgrader (0.1.1)
-cwltool (1.0.20160712154127)
-schema-salad (1.14.20160708181155)
+cwltool (1.0.20190915164430)
+schema-salad (4.5.20190906201758)
 setuptools (25.1.6)
 ```
 
@@ -30,7 +30,7 @@ manually you would execute:
 
 ```
 $ wget ftp://ftp.1000genomes.ebi.ac.uk/vol1/ftp/phase3/data/NA12878/alignment/NA12878.chrom20.ILLUMINA.bwa.CEU.low_coverage.20121211.bam
-$ docker run -it -v `pwd`/NA12878.chrom20.ILLUMINA.bwa.CEU.low_coverage.20121211.bam:/NA12878.chrom20.ILLUMINA.bwa.CEU.low_coverage.20121211.bam collaboratory/dockstore-tool-bamstats:1.25-3
+$ docker run -it -v `pwd`/NA12878.chrom20.ILLUMINA.bwa.CEU.low_coverage.20121211.bam:/NA12878.chrom20.ILLUMINA.bwa.CEU.low_coverage.20121211.bam collaboratory/dockstore-tool-bamstats:1.25-7
 
 # within the docker container
 $ /usr/local/bin/bamstats 4 /NA12878.chrom20.ILLUMINA.bwa.CEU.low_coverage.20121211.bam

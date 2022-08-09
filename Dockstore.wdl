@@ -1,6 +1,10 @@
+version 1.0
 task bamstats {
-	File bam_input
-	Int mem_gb
+    input {
+        File bam_input
+        Int mem_gb
+    }
+
 
 	command {
 		bash /usr/local/bin/bamstats ${mem_gb} ${bam_input}
@@ -21,7 +25,9 @@ task bamstats {
 }
 
 workflow bamstatsWorkflow {
-	File bam_input
-	Int mem_gb	
+    input {
+        File bam_input
+        Int mem_gb
+    }
 	call bamstats { input: bam_input=bam_input, mem_gb=mem_gb }
 }
