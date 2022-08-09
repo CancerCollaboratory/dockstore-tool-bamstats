@@ -69,13 +69,17 @@ This is the parameterization of the BAM stat tool, a copy is present in this rep
 Run it using the `dockstore` CLI:
 
 ```
-Usage:
-# fetch CWL
-$> dockstore tool cwl --entry quay.io/collaboratory/dockstore-tool-bamstats:1.25-7 > Dockstore.cwl
-# make a runtime JSON template and edit it (or use the content of sample_configs.json above)
-$> dockstore tool convert cwl2json --cwl Dockstore.cwl > Dockstore.json
-# run it locally with the Dockstore CLI
-$> dockstore tool launch --entry quay.io/collaboratory/dockstore-tool-bamstats:1.25-7 --json Dockstore.json
+# Fetch CWL workflow
+dockstore tool cwl --entry quay.io/collaboratory/dockstore-tool-bamstats:1.25-7 > Dockstore.cwl
+
+# Make a runtime JSON template and edit it (or use the content of sample_configs.json above)
+dockstore tool convert cwl2json --cwl Dockstore.cwl > Dockstore.json
+
+# Update the "path" field for both input and output files within Dockstore.json
+jq '.bam_input.path |= "ftp://ftp.1000genomes.ebi.ac.uk/vol1/ftp/phase3/data/NA12878/alignment/NA12878.chrom20.ILLUMINA.bwa.CEU.low_coverage.20121211.bam"| .bamstats_report.path |= "/tmp/bamstats_report.zip"' Dockstore.json | sponge  Dockstore.json
+
+# Run it locally with the Dockstore CLI
+dockstore tool launch --entry quay.io/collaboratory/dockstore-tool-bamstats:1.25-7 --json Dockstore.json
 ```
 
 ### With WDL
