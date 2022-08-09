@@ -27,8 +27,6 @@ jobs:
       with:
         python-version: '3.9'
 
-    - name: Setup Python
-      run: bash before-install.sh
     - name: Setup engines
       run: bash install.sh
     - name: Run workflows
