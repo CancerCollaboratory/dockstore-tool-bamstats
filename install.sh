@@ -6,9 +6,10 @@ set -o nounset
 set -o xtrace
 
 if [[ "${LANGUAGE}" == "cwl" ]]; then
-    pip2.7 install --user cwl-runner cwltool==1.0.20160712154127 schema-salad==1.14.20160708181155 avro==1.8.1
+    curl -o requirements.txt "https://raw.githubusercontent.com/dockstore/dockstore/1.7.0-rc.3/dockstore-webservice/src/main/resources/requirements/1.7.0/requirements3.txt"
+    pip3 install --user -r requirements.txt
 elif [[ "${LANGUAGE}" == "wdl" ]]; then
-    wget https://github.com/broadinstitute/cromwell/releases/download/32/cromwell-32.jar
+    wget https://github.com/broadinstitute/cromwell/releases/download/44/cromwell-44.jar
 elif [[ "${LANGUAGE}" == "nfl" ]]; then
     curl -s https://get.nextflow.io | bash
     mv nextflow $HOME/bin
