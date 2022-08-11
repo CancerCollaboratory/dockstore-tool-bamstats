@@ -59,16 +59,16 @@ Run it using the `dockstore` CLI:
 
 ```
 # Fetch CWL workflow
-dockstore workflow cwl --entry github.com/dockstore/dockstore-tool-bamstats/cwl01:feature/update > Dockstore.cwl
+dockstore workflow cwl --entry github.com/dockstore/dockstore-tool-bamstats/bamstats_cwl:feature/update > bamstats.cwl
 
 # Make a runtime JSON template and edit it (or use the content of sample_configs.json above)
-dockstore workflow convert cwl2json --cwl Dockstore.cwl > Dockstore.json
+dockstore workflow convert cwl2json --cwl bamstats.cwl > Dockstore.json
 
 # Update the "path" field for both input and output files within Dockstore.json
 jq '.bam_input.path |= "ftp://ftp.1000genomes.ebi.ac.uk/vol1/ftp/phase3/data/NA12878/alignment/NA12878.chrom20.ILLUMINA.bwa.CEU.low_coverage.20121211.bam"| .bamstats_report.path |= "/tmp/bamstats_report.zip"' Dockstore.json | sponge  Dockstore.json
 
 # Run it locally with the Dockstore CLI
-dockstore workflow launch --entry github.com/dockstore/dockstore-tool-bamstats/cwl01:feature/update --json Dockstore.json
+dockstore workflow launch --entry github.com/dockstore/dockstore-tool-bamstats/bamstats_cwl:feature/update --json Dockstore.json
 ```
 
 ### With WDL
@@ -90,9 +90,9 @@ Run it using the `dockstore` CLI:
 ```
 Usage:
 # fetch WDL
-$> dockstore workflow wdl --entry github.com/dockstore/dockstore-tool-bamstats/wdl:feature/update > Dockstore.wdl
+$> dockstore workflow wdl --entry github.com/dockstore/dockstore-tool-bamstats/wdl:feature/update > bamstats.wdl
 # make a runtime JSON template and edit it (or use the content of test.wdl.json above)
-$> dockstore tool convert wdl2json --wdl Dockstore.wdl > Dockstore.json
+$> dockstore tool convert wdl2json --wdl bamstats.wdl > Dockstore.json
 # run it locally with the Dockstore CLI
 $> dockstore workflow launch --entry github.com/dockstore/dockstore-tool-bamstats/wdl:feature/update --json Dockstore.json
 ```

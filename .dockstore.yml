@@ -1,22 +1,22 @@
 version: 1.2
 tools:
   - subclass: CWL
-    primaryDescriptorPath: /Dockstore.cwl
+    primaryDescriptorPath: /bamstats.cwl
     testParameterFiles:
       - /test.json
-    name: cwl01
+    name: bamstats_cwl
     authors:
       - orcid: 0000-0002-6130-1021
   - subclass: CWL
-    primaryDescriptorPath: /Dockstore2.cwl
+    primaryDescriptorPath: /bamstats_sort.cwl
     testParameterFiles:
       - /test.json
-    name: cwl02
+    name: bamstats_sort_cwl
     authors:
       - orcid: 0000-0002-6130-1021
 workflows:
   - subclass: WDL
-    primaryDescriptorPath: /Dockstore.wdl
+    primaryDescriptorPath: /bamstats.wdl
     testParameterFiles:
       - /test.wdl.json
     name: wdl
