@@ -29,8 +29,8 @@ jobs:
 
     - name: Setup engines
       run: bash install.sh
-    - name: Run workflows
-      run: bash script.sh
+      #    - name: Run workflows
+      #      run: bash script.sh
     - name: Setup CLI 
       run: | 
         curl -L -o dockstore https://github.com/dockstore/dockstore/releases/download/1.12.2/dockstore
@@ -39,6 +39,7 @@ jobs:
         cp dockstore dockstore_bin
         echo "/home/runner/dockstore_bin" >> $GITHUB_PATH
         echo "$PATH"
+        mkdir ~/.dockstore
         printf "cromwell-vm-options: -DLOG_LEVEL=ERROR\nserver-url: https://dockstore.org/api" > ~/.dockstore/config
         dockstore
     - name: Run workflows with CLI
