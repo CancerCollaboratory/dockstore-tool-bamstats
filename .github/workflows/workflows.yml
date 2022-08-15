@@ -31,3 +31,9 @@ jobs:
       run: bash install.sh
     - name: Run workflows
       run: bash script.sh
+    - name: Setup CLI 
+      run: | 
+        curl -L -o ~/bin/dockstore https://github.com/dockstore/dockstore/releases/download/1.12.2/dockstore
+        chmod +x ~/bin/dockstore       
+    - name: Run workflows with CLI
+      run: bash cli-script.sh
