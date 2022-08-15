@@ -91,7 +91,7 @@ Usage:
 # fetch WDL
 $> dockstore workflow wdl --entry github.com/dockstore/dockstore-tool-bamstats/wdl:feature/update > bamstats.wdl
 # make a runtime JSON template and edit it (or use the content of test.wdl.json above)
-$> dockstore tool convert wdl2json --wdl bamstats.wdl > Dockstore.json
+$> dockstore workflow convert wdl2json --wdl bamstats.wdl > Dockstore.json
 # run it locally with the Dockstore CLI
 $> dockstore workflow launch --entry github.com/dockstore/dockstore-tool-bamstats/wdl:feature/update --json Dockstore.json
 ```
