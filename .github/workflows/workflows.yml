@@ -35,8 +35,11 @@ jobs:
       run: | 
         curl -L -o dockstore https://github.com/dockstore/dockstore/releases/download/1.12.2/dockstore
         chmod +x dockstore       
-        echo "`pwd`" >> $GITHUB_PATH
+        mkdir dockstore_bin
+        cp dockstore dockstore_bin
+        echo "/home/runner/dockstore_bin" >> $GITHUB_PATH
         echo "$PATH"
-        ./dockstore
+        printf "cromwell-vm-options: -DLOG_LEVEL=ERROR\nserver-url: https://dockstore.org/api" > ~/.dockstore/config
+        dockstore
     - name: Run workflows with CLI
       run: bash cli-script.sh
