@@ -33,7 +33,7 @@ jobs:
       run: bash script.sh
     - name: Setup CLI 
       run: | 
-        curl -L -o ~/bin/dockstore https://github.com/dockstore/dockstore/releases/download/1.12.2/dockstore
-        chmod +x ~/bin/dockstore       
+        curl -L -o dockstore https://github.com/dockstore/dockstore/releases/download/1.12.2/dockstore
+        chmod +x dockstore       
     - name: Run workflows with CLI
       run: bash cli-script.sh
