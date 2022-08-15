@@ -35,8 +35,8 @@ jobs:
       run: | 
         curl -L -o dockstore https://github.com/dockstore/dockstore/releases/download/1.12.2/dockstore
         chmod +x dockstore       
-        mkdir dockstore_bin
-        cp dockstore dockstore_bin
+        mkdir /home/runner/dockstore_bin
+        mv dockstore /home/runner/dockstore_bin
         echo "/home/runner/dockstore_bin" >> $GITHUB_PATH
     - name: Prime CLI
       run: | 
