@@ -13,8 +13,7 @@ Versions that we tested with are documented iin https://raw.githubusercontent.co
 
 ## Building Manually
 
-Normally you would let GitHub actions build this.  But, if you need to build
-manually you would execute:
+Normally you would let GitHub actions build this.  But, if you need to build manually (for example due to https://github.com/broadinstitute/cromwell/issues/6827)  you would execute:
 
     docker build -t ghcr.io/dockstore/dockstore-tool-bamstats:1.25-8 .
 
