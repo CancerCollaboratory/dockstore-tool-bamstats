@@ -7,6 +7,8 @@ A repo for the `Dockerfile` to create a Docker image for the BAMStats command. A
 `Dockstore.yml` which is used by the [Dockstore](https://www.dockstore.org) to register
 this container and describe how to call BAMStats for the community.
 
+This repo is archived in favour of https://github.com/dockstore/dockstore-tool-bamstats
+
 ## Validation 
 
 This tool has been validated as a CWL draft-3 and v1.0 CommandLineTool. 
